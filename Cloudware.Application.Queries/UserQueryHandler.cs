@@ -127,6 +127,9 @@ namespace Cloudware.Application.Queries
             try
             {
                 var secretKey = _configuration.GetSection("JwtConfig").GetValue<string>("Secret");
+                if (string.IsNullOrEmpty(secretKey))
+                    throw new ArgumentException("Parâmetro Secret não informado.");
+
                 var daysTokenExpiration = _configuration.GetSection("JwtConfig").GetValue<int>("DaysTokenExpiration");
                 var symmetricSecurityKey = Encoding.ASCII.GetBytes(secretKey);
                 var securityTokenDescriptor = new SecurityTokenDescriptor

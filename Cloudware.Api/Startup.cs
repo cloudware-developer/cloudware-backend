@@ -22,7 +22,7 @@ namespace Cloudware.Api
 
                 services.AddSwaggerConfig();
 
-                services.AddServices();
+                services.AddServices(_configuration);
 
                 services.AddJwtConfig(_configuration);
 

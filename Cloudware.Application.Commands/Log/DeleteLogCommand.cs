@@ -8,5 +8,13 @@ namespace Cloudware.Application.Commands.Log
         public int LogId { get; set; }
 
         public ETypeLog TypeLog { get; set; }
+
+        public DeleteLogCommand() { }
+
+        public DeleteLogCommand(int logId, ETypeLog typeLog)
+        {
+            LogId = logId;
+            TypeLog = typeLog;
+        }
     }
 }

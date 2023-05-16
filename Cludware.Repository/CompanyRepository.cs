@@ -68,8 +68,11 @@ namespace Cludware.Repository
                 if (filter.CompanyId > 0)
                     sql = sql + " AND CompanyId = @CompanyId";
 
-                if (!string.IsNullOrEmpty(filter.Name))
-                    sql = sql + " AND Name = @Name";
+                if (!string.IsNullOrEmpty(filter.LegalEntityName))
+                    sql = sql + " AND LegalEntityName = @LegalEntityName";
+
+                if (!string.IsNullOrEmpty(filter.LegalFantasyName))
+                    sql = sql + " AND LegalFantasyName = @LegalFantasyName";
 
                 if (filter.CreatedAt != null)
                     sql = sql + " AND CreatedAt = @CreatedAt";

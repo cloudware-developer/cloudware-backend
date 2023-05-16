@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cloudware.Api.Extensions
 {
-    public static class JwtExtensions
+    public static class JwtExtension
     {
         public static IServiceCollection AddJwtConfig(this IServiceCollection services, IConfiguration configuration)
         {
@@ -13,7 +13,7 @@ namespace Cloudware.Api.Extensions
             var secretKey = configuration.GetSection("JwtConfig").GetValue<string>("Secret");
 
             if (string.IsNullOrEmpty(secretKey))
-                throw new ApplicationErrorException($"Tag 'Secret' dentro da section JwtConfig não informada no arquivo appsettings.{environment}.json. Método {nameof(JwtExtensions)}.{nameof(AddJwtConfig)}.");
+                throw new ApplicationErrorException($"Tag 'Secret' dentro da section JwtConfig não informada no arquivo appsettings.{environment}.json. Método {nameof(JwtExtension)}.{nameof(AddJwtConfig)}.");
 
             var symmetricSecurityKey = Encoding.ASCII.GetBytes(secretKey);
 

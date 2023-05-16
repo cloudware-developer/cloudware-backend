@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cloudware.Application.Queries.Log;
+using FluentValidation;
 
 namespace Cloudware.Application.Queries.Validations.Log
 {
-    internal class ObtainLogQueryValidation
+    public class ObtainLogQueryValidation : AbstractValidator<ObtainLogQuery>
     {
+        public ObtainLogQueryValidation()
+        {
+            RuleFor(x => x.LogId).GreaterThan(0).WithMessage("Informe o código do log.");
+        }
     }
 }

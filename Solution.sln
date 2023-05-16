@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cludware.Repository", "Clud
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cloudware.Core", "Cloudware.Core\Cloudware.Core.csproj", "{81DCAE2A-8CBB-4491-8F2B-E383A1C06386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudware.Application.Commands", "Cloudware.Application.Commands\Cloudware.Application.Commands.csproj", "{4FB9E4CF-5522-42B4-8CF5-4E9FB8848156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cloudware.Application.Commands", "Cloudware.Application.Commands\Cloudware.Application.Commands.csproj", "{4FB9E4CF-5522-42B4-8CF5-4E9FB8848156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudware.Application.Queries", "Cloudware.Application.Queries\Cloudware.Application.Queries.csproj", "{99022688-8BE7-4E85-BDC1-AF29428CEE16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cloudware.Application.Queries", "Cloudware.Application.Queries\Cloudware.Application.Queries.csproj", "{99022688-8BE7-4E85-BDC1-AF29428CEE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloudware.HttpServices", "Cloudware.HttpServices\Cloudware.HttpServices.csproj", "{0FB121D5-FF35-408E-8116-168ACE80E804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{99022688-8BE7-4E85-BDC1-AF29428CEE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99022688-8BE7-4E85-BDC1-AF29428CEE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99022688-8BE7-4E85-BDC1-AF29428CEE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB121D5-FF35-408E-8116-168ACE80E804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB121D5-FF35-408E-8116-168ACE80E804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB121D5-FF35-408E-8116-168ACE80E804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB121D5-FF35-408E-8116-168ACE80E804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{81DCAE2A-8CBB-4491-8F2B-E383A1C06386} = {2489BD4B-5B42-45A8-AC4B-6ECDC6A01A01}
 		{4FB9E4CF-5522-42B4-8CF5-4E9FB8848156} = {2489BD4B-5B42-45A8-AC4B-6ECDC6A01A01}
 		{99022688-8BE7-4E85-BDC1-AF29428CEE16} = {2489BD4B-5B42-45A8-AC4B-6ECDC6A01A01}
+		{0FB121D5-FF35-408E-8116-168ACE80E804} = {2489BD4B-5B42-45A8-AC4B-6ECDC6A01A01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF29AA63-3CB2-4DE0-AF58-2CE7A1B74CFA}

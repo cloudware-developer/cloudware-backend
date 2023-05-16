@@ -12,12 +12,13 @@ using Cludware.Repository.Infra;
 using Cludware.Repository.Infra.Cache;
 using MediatR;
 using System.Reflection;
+using Cloudware.HttpServices.Extensions;
 
 namespace Cloudware.Api.Extensions
 {
     public static class ServicesExtension
     {
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICacheRepository, CacheRepository>();
@@ -65,6 +66,12 @@ namespace Cloudware.Api.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<ILogAuthenticationRepository, LogAuthenticationRepository>();
+
+            //----------------------------------------------------
+            // External Services Retrieve Data.
+            //----------------------------------------------------
+            services.AddInvestingHttpClient(configuration);
+            services.AddBancoCentralHttpClient(configuration);
 
             return services;
         }

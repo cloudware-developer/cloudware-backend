@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cloudware.Application.Commands\Cloudware.Application.Commands.csproj" />
     <ProjectReference Include="..\Cloudware.Application.Queries\Cloudware.Application.Queries.csproj" />
+    <ProjectReference Include="..\Cloudware.HttpServices\Cloudware.HttpServices.csproj" />
   </ItemGroup>
 
 </Project>

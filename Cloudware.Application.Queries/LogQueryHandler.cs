@@ -63,7 +63,7 @@ namespace Cloudware.Application.Queries
                 {
                     var filters = request.ToModelView<LogAuthenticationEntity, ObtainLogCollectionQuery>();
 
-                    switch ((ETypeLog)request.TypeLog)
+                    switch (request.TypeLog)
                     {
                         case ETypeLog.Authentication:
                         {
