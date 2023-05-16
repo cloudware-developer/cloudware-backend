@@ -25,6 +25,9 @@ namespace Cloudware.HttpServices
             _client = client; 
         }
 
+        /// <summary>
+        /// Obtem a cotação atual da taxa selic.
+        /// </summary>
         public async Task<SelicRateResponse> ObtainSelicRate()
         {
             try
@@ -39,8 +42,15 @@ namespace Cloudware.HttpServices
                     var htmlDocument = new HtmlDocument();
                     htmlDocument.LoadHtml(contentString);
 
-                    var data = await ObtainSelicValueFromDocument(htmlDocument);
-                    return data;
+                    try
+                    {
+                        //https://www.melhorcambio.com/taxa-selic
+                        return new SelicRateResponse();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
                 }
             }
             catch (Exception ex)
@@ -49,6 +59,9 @@ namespace Cloudware.HttpServices
             }
         }
 
+        /// <summary>
+        /// Obtem a cotação do dolar futuro.
+        /// </summary>
         public async Task<DollarFutureResponse> ObtainFutureCotationDollar()
         {
             try
@@ -63,35 +76,16 @@ namespace Cloudware.HttpServices
                     var htmlDocument = new HtmlDocument();
                     htmlDocument.LoadHtml(contentString);
 
-                    var data = await ObtainDollarFutureValueFromDocument(htmlDocument);
-                    return data;
+                    try
+                    {
+                        //https://www.melhorcambio.com/dolar-hoje
+                        return new DollarFutureResponse();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        private async Task<SelicRateResponse> ObtainSelicValueFromDocument(HtmlDocument htmlDocument)
-        {
-            try
-            {
-                //https://www.melhorcambio.com/taxa-selic
-                return new SelicRateResponse();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        private async Task<DollarFutureResponse> ObtainDollarFutureValueFromDocument(HtmlDocument htmlDocument)
-        {
-            try
-            {
-                //https://www.melhorcambio.com/dolar-hoje
-                return new DollarFutureResponse();
             }
             catch (Exception ex)
             {

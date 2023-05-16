@@ -21,6 +21,10 @@ namespace Cloudware.HttpServices
             _client = client; 
         }
 
+        /// <summary>
+        /// Obtem a cotação atual do da Taxa Selic.
+        /// </summary>
+        /// <returns>Retorna objeto <see cref="SelicRateResponse">SelicRateResponse</see>.</returns>
         public async Task<SelicRateResponse> ObtainSelicRate()
         {
             try
@@ -35,22 +39,16 @@ namespace Cloudware.HttpServices
                     var htmlDocument = new HtmlDocument();
                     htmlDocument.LoadHtml(contentString);
 
-                    var data = await ObtainValuesFromDocument(htmlDocument);
-                    return data;
+                    try
+                    {
+                        // https://medium.com/@thepen0411/web-crawling-tutorial-in-c-48d921ef956a
+                        return new SelicRateResponse();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        private async Task<SelicRateResponse> ObtainValuesFromDocument(HtmlDocument htmlDocument)
-        {
-            try
-            {
-                // https://medium.com/@thepen0411/web-crawling-tutorial-in-c-48d921ef956a
-                return new SelicRateResponse();
             }
             catch (Exception ex)
             {
